@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi Linier Kelas 8</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            text-align: center; /* Center all text on the page */
+        }
+
+        header {
+            background: linear-gradient(90deg, #4a90e2, #003366);
+            padding: 1rem 0;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style-type: none; /* Remove the bullet points */
+            padding-left: 0; /* Remove any indentation */
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .home {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .home h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .home p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #4a90e2;
+            color: hsl(0, 0%, 100%);
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+        }
+
+        footer {
+            display: flex;
+            color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer p {
+            color: white !important;
+        }
+
+        .background-image {
+            width: 50%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #4a90e2;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .burger.toggle .line2 {
+                opacity: 0;
+            }
+
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: center; /* Center the paragraph and list items */
+            color: #333;
+        }
+
+        ul {
+            margin-left: 0; /* Remove indentation */
+            list-style-type: none; /* Remove the bullet points */
+        }
+
+        .formula {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+        }
+
+        /* Gaya untuk bagian kontak */
+        .contact-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h1 {
+            color: #007BFF;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .social-media {
+            text-align: center; /* Memusatkan tulisan */
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 15px; /* Memberikan jarak antara link */
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Fungsi Linier Kelas 8</div>
+            <ul class="nav-links">
+                <li><a href="beranda 2.html"><i class="fas fa-home"></i> Beranda2</a></li>
+                <li><a href="materi.html"><i class="fas fa-book"></i> Materi</a></li>
+                <li><a href="contoh soal.html"><i class="fas fa-pencil-alt"></i> Contoh Soal</a></li>
+                <li><a href="latihan soal.html"><i class="fas fa-edit"></i> Latihan soal</a></li>
+                <li><a href="geogebra.html"><i class="fas fa-edit"></i> Geogebra</a></li>
+                <li><a href="kuis.html"><i class="fas fa-question-circle"></i> Kuis</a></li>
+                <li><a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Biodata Penulis</h1>
+        <p><strong>Nama:</strong> M.TAQQIUDIN</p>
+        <p><strong>Tempat, Tanggal Lahir:</strong> PRINGGASELA, 10 JULI 2004</p>
+        <p><strong>Alamat:</strong> PRINGGASELA</p>
+        <p><strong>Pendidikan:</strong></p>
+        <ul>
+            <li>SDN 3 PRINGGASELA (2010-2016)</li>
+            <li>SMPN 1 PRINGGASEKA (2016-2019)</li>
+            <li>MAN 1 LOMBOK TIMUR (2019-2022)</li>
+            <li>Universitas Mataram (2022-sekarang)</li>
+        </ul>
+        <p><strong>Email:</strong> <a href="mailto:mtaqqiudin@gmail.com">mtaqqiudin@gmail.com</a></p>
+        <p><strong>Kontak:</strong> 087755012868</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fungsi Linier Kelas 8. M.Taqqiudin.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+
+            navLinks.addEventListener('click', (event) => {
+                if (event.target.tagName === 'A') {
+                    navLinks.classList.remove('active');
+                    burger.classList.remove('toggle');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
